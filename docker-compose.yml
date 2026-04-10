@@ -1,0 +1,14 @@
+services:
+  grocy:
+    image: lscr.io/linuxserver/grocy:4.5.0
+    environment:
+      # - PUID=568
+      # - PGID=568
+      - PUID=${DEFAULT_UNPRIVILEGED_PUID}
+      - PGID=${DEFAULT_UNPRIVILEGED_PGID}
+      - TZ=${TZ}
+    ports:
+      - ${PORT}:80
+    volumes:
+      - ${CONFIG}:/config
+    restart: unless-stopped
