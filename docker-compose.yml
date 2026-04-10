@@ -10,5 +10,5 @@ services:
     ports:
       - ${PORT}:80
     volumes:
-      - ${CONFIG}:/config
+      - ${DATA}:/config
     restart: unless-stopped
